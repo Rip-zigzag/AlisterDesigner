@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alister - Professional Graphic Design Platform</title> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#ec4899',
+                        dark: '#1e293b',
+                        light: '#f8fafc'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e6e9f0 100%);
+            min-height: 100vh;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 100%);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(90deg, #ec4899 0%, #f43f5e 100%);
+        }
+        
+        .btn-secondary:hover {
+            background: linear-gradient(90deg, #db2777 0%, #e11d48 100%);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .payment-method {
+            transition: all 0.2s ease;
+        }
+        
+        .payment-method:hover {
+            transform: scale(1.05);
+        }
+        
+        .design-preview {
+            background: linear-gradient(45deg, #6366f1, #8b5cf6, #ec4899);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .hero-text {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+        }
+        
+        .auth-form {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .dashboard-card {
+            transition: all 0.3s ease;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .vip-badge {
+            background: linear-gradient(90deg, #f59e0b, #f97316);
+        }
+        
+        .footer-link:hover {
+            color: #8b5cf6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-palette text-3xl text-primary"></i>
+                        <span class="ml-2 text-2xl font-bold text-dark">Alister</span>
+                    
+    <!-- ...existing code... -->
+<div class="hidden md:ml-10 md:flex md:space-x-8">
+    <a href="index.html" class="text-dark hover:text-primary font-medium">Home</a>
+    <a href="features.html" class="text-gray-500 hover:text-primary font-medium">Features</a>
+    <a href="pricing.html" class="text-gray-500 hover:text-primary font-medium">Pricing</a>
+    <a href="support.html" class="text-gray-500 hover:text-primary font-medium">Support</a>
+</div>
+    <!-- ...existing code... -->               
+                     
+                    
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:block">
+                        <button id="loginBtn" class="btn-primary text-white px-5 py-2 rounded-lg font-medium mr-3">
+                            Sign In
+                        </button>
+                        <button id="signupBtn" class="btn-secondary text-white px-5 py-2 rounded-lg font-medium">
+                            Sign Up
+                        </button>
+                    </div>
+                    <div class="md:hidden flex items-center">
+                        <button id="mobileMenuBtn" class="text-gray-500 hover:text-gray-700">
+                            <i class="fas fa-bars text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white">
+            <div class="pt-2 pb-3 space-y-1 px-4">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-dark">Home</a>
+                <a href="features.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-dark">Features</a>
+                <a href="pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-dark">Pricing</a>
+                <a href="support.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-dark">Support</a>
+                <div class="pt-4 pb-3 border-t border-gray-200">
+                    <button id="mobileLoginBtn" class="w-full btn-primary text-white px-4 py-2 rounded-lg font-medium mb-2">
+                        Sign In
+                    </button>
+                    <button id="mobileSignupBtn" class="w-full btn-secondary text-white px-4 py-2 rounded-lg font-medium">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Pricing</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-dark sm:text-4xl">
+                    Simple, transparent pricing
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Choose the plan that works best for you
+                </p>
+            </div>
+
+            <div class="mt-16 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
+                <!-- Free Plan -->
+                <div class="pricing-card flex flex-col rounded-2xl shadow-xl overflow-hidden">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-2xl font-bold text-dark">Free</h3>
+                        <div class="mt-4 flex items-baseline text-dark">
+                            <span class="text-4xl font-extrabold tracking-tight">$0</span>
+                            <span class="ml-1 text-xl font-semibold">/month</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">Perfect for getting started</p>
+                        <button class="mt-6 w-full btn-primary text-white px-4 py-2 rounded-lg font-medium">
+                            Get Started
+                        </button>
+                    </div>
+                    <div class="flex-1 p-6 bg-gray-50 border-t border-gray-200">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">100+ templates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">50MB storage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Basic design tools</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">No premium templates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">No team collaboration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">No print services</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="pricing-card flex flex-col rounded-2xl shadow-xl overflow-hidden border-2 border-primary relative">
+                    <div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 rounded-bl-lg">
+                        Most Popular
+                    </div>
+                    <div class="p-6 bg-white">
+                        <h3 class="text-2xl font-bold text-dark">Pro</h3>
+                        <div class="mt-4 flex items-baseline text-dark">
+                            <span class="text-4xl font-extrabold tracking-tight">$4</span>
+                            <span class="ml-1 text-xl font-semibold">/design</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">Pay only for what you export</p>
+                        <button class="mt-6 w-full btn-primary text-white px-4 py-2 rounded-lg font-medium">
+                            Start Designing
+                        </button>
+                    </div>
+                    <div class="flex-1 p-6 bg-gray-50 border-t border-gray-200">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">10,000+ templates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">100GB storage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Advanced design tools</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Premium templates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Team collaboration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Print services ($4 per design)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- VIP Plan -->
+                <div class="pricing-card flex flex-col rounded-2xl shadow-xl overflow-hidden">
+                    <div class="p-6 bg-white">
+                        <h3 class="text-2xl font-bold text-dark">VIP</h3>
+                        <div class="mt-4 flex items-baseline text-dark">
+                            <span class="text-4xl font-extrabold tracking-tight">$70</span>
+                            <span class="ml-1 text-xl font-semibold">/month</span>
+                        </div>
+                        <p class="mt-2 text-gray-600">or $800/year, save 5%</p>
+                        <button class="mt-6 w-full btn-secondary text-white px-4 py-2 rounded-lg font-medium">
+                            Go VIP
+                        </button>
+                    </div>
+                    <div class="flex-1 p-6 bg-gray-50 border-t border-gray-200">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Unlimited templates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">1TB storage</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">All premium features</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Priority support</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Unlimited print/export</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                                <span class="text-gray-600">Exclusive VIP templates</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-dark">Secure Payment Methods</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    We accept all major payment options for your convenience
+                </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
+                <div class="payment-method flex justify-center items-center p-4 bg-gray-50 rounded-lg">
+                    <i class="fab fa-cc-visa text-4xl text-blue-600"></i>
+                </div>
+                <div class="payment-method flex justify-center items-center p-4 bg-gray-50 rounded-lg">
+                    <i class="fab fa-cc-mastercard text-4xl text-red-600"></i>
+                </div>
+                <div class="payment-method flex justify-center items-center p-4 bg-gray-50 rounded-lg">
+                    <i class="fab fa-cc-amex text-4xl text-blue-400"></i>
+                </div>
+                <div class="payment-method flex justify-center items-center p-4 bg-gray-50 rounded-lg">
+                    <i class="fab fa-paypal text-4xl text-blue-800"></i>
+                </div>
+                <div class="payment-method flex justify-center items-center p-4 bg-gray-50 rounded-lg">
+                    <i class="fab fa-bitcoin text-4xl text-orange-500"></i>
+                </div>
+                <div class="payment-method flex justify-center items-center p-4 bg-gray-50 rounded-lg">
+                    <div class="text-2xl font-bold text-green-600">M-Pesa</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Footer -->
+  <footer class="bg-dark text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center">
+                        <i class="fas fa-palette text-2xl text-primary"></i>
+                        <span class="ml-2 text-xl font-bold">Alister</span>
+                    </div>
+                    <p class="mt-4 text-gray-400">
+                        Professional graphic design tools for everyone. Create stunning visuals in minutes.
+                    </p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Product</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="features.html" class="footer-link text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Templates</a></li>
+                        <li><a href="pricing.html" class="footer-link text-gray-400 hover:text-white">Pricing</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Download</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Company</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Legal</h3>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2023 Alister. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <p class="text-gray-400">Payments securely processed by PayPal</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+      <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content bg-white rounded-2xl max-w-md w-full mx-4">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-2xl font-bold text-dark">Sign In to Alister</h3>
+                    <button id="closeLoginModal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <form id="loginForm" class="space-y-4">
+                    <div>
+                        <label for="loginEmail" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="loginEmail" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" required>
+                    </div>
+                    <div>
+                        <label for="loginPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="loginPassword" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" required>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="rememberMe" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                        <label for="rememberMe" class="ml-2 block text-sm text-gray-700">Remember me</label>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full btn-primary text-white px-4 py-2 rounded-lg font-medium">
+                            Sign In
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-4 text-center">
+                    <p class="text-gray-600">
+                        Don't have an account? 
+                        <button id="switchToSignup" class="text-primary font-medium">Sign Up</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content bg-white rounded-2xl max-w-md w-full mx-4">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-2xl font-bold text-dark">Create Your Account</h3>
+                    <button id="closeSignupModal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <form id="signupForm" class="space-y-4">
+                    <div>
+                        <label for="signupName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" id="signupName" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" required>
+                    </div>
+                    <div>
+                        <label for="signupEmail" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="signupEmail" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" required>
+                    </div>
+                    <div>
+                        <label for="signupPassword" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input type="password" id="signupPassword" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" required>
+                    </div>
+                    <div>
+                        <label for="signupConfirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                        <input type="password" id="signupConfirmPassword" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" required>
+                    </div>
+                    <div class="flex items-center">
+                        <input id="termsAgree" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" required>
+                        <label for="termsAgree" class="ml-2 block text-sm text-gray-700">
+                            I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full btn-primary text-white px-4 py-2 rounded-lg font-medium">
+                            Create Account
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-4 text-center">
+                    <p class="text-gray-600">
+                        Already have an account? 
+                        <button id="switchToLogin" class="text-primary font-medium">Sign In</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Modal -->
+    <div id="dashboardModal" class="modal">
+        <div class="modal-content bg-white rounded-2xl max-w-4xl w-full mx-4">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-dark">Your Alister Dashboard</h3>
+                    <button id="closeDashboard" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- User Info -->
+                    <div class="md:col-span-1">
+                        <div class="bg-gradient-to-br from-primary to-secondary rounded-2xl p-6 text-white">
+                            <div class="flex items-center">
+                                <div class="bg-white text-primary rounded-full h-16 w-16 flex items-center justify-center">
+                                    <i class="fas fa-user text-2xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 id="userNameDisplay" class="text-xl font-bold">John Doe</h4>
+                                    <p id="userEmailDisplay" class="text-indigo-100">john@example.com</p>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p class="text-indigo-200">Account Type:</p>
+                                <p id="userPlanDisplay" class="text-xl font-bold">Free Plan</p>
+                            </div>
+                            <button id="upgradeBtn" class="mt-4 w-full bg-white text-primary font-bold py-2 rounded-lg">
+                                Upgrade to VIP
+                            </button>
+                        </div>
+                        
+                        <div class="mt-6 bg-white rounded-2xl shadow p-6">
+                            <h4 class="text-lg font-bold text-dark mb-4">Recent Projects</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-center">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <div class="ml-3">
+                                        <p class="font-medium text-dark">Summer Sale Poster</p>
+                                        <p class="text-sm text-gray-500">Edited 2 hours ago</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <div class="ml-3">
+                                        <p class="font-medium text-dark">LinkedIn Banner</p>
+                                        <p class="text-sm text-gray-500">Edited yesterday</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-center">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <div class="ml-3">
+                                        <p class="font-medium text-dark">Instagram Story</p>
+                                        <p class="text-sm text-gray-500">Edited 3 days ago</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="mt-4 w-full text-center text-primary font-medium">
+                                View All Projects
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Main Content -->
+                    <div class="md:col-span-2">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="dashboard-card bg-white rounded-2xl shadow p-6">
+                                <div class="flex items-center">
+                                    <div class="bg-primary bg-opacity-10 p-3 rounded-lg">
+                                        <i class="fas fa-file-alt text-primary text-2xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-gray-500">Total Designs</p>
+                                        <p class="text-2xl font-bold text-dark">24</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dashboard-card bg-white rounded-2xl shadow p-6">
+                                <div class="flex items-center">
+                                    <div class="bg-secondary bg-opacity-10 p-3 rounded-lg">
+                                        <i class="fas fa-download text-secondary text-2xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-gray-500">Exports This Month</p>
+                                        <p class="text-2xl font-bold text-dark">8</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 bg-white rounded-2xl shadow p-6">
+                            <h4 class="text-lg font-bold text-dark mb-4">Start a New Design</h4>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                                <button class="dashboard-card bg-gray-50 rounded-xl p-4 flex flex-col items-center hover:bg-gray-100">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <span class="mt-2 text-dark">Social Media</span>
+                                </button>
+                                <button class="dashboard-card bg-gray-50 rounded-xl p-4 flex flex-col items-center hover:bg-gray-100">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <span class="mt-2 text-dark">Marketing</span>
+                                </button>
+                                <button class="dashboard-card bg-gray-50 rounded-xl p-4 flex flex-col items-center hover:bg-gray-100">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <span class="mt-2 text-dark">Presentations</span>
+                                </button>
+                                <button class="dashboard-card bg-gray-50 rounded-xl p-4 flex flex-col items-center hover:bg-gray-100">
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                                    <span class="mt-2 text-dark">Print</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 bg-white rounded-2xl shadow p-6">
+                            <h4 class="text-lg font-bold text-dark mb-4">Quick Actions</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <button class="dashboard-card bg-primary bg-opacity-10 rounded-xl p-4 text-center hover:bg-primary hover:bg-opacity-20">
+                                    <i class="fas fa-cloud-upload-alt text-primary text-2xl"></i>
+                                    <p class="mt-2 text-dark">Upload Assets</p>
+                                </button>
+                                <button class="dashboard-card bg-secondary bg-opacity-10 rounded-xl p-4 text-center hover:bg-secondary hover:bg-opacity-20">
+                                    <i class="fas fa-users text-secondary text-2xl"></i>
+                                    <p class="mt-2 text-dark">Invite Team</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIP Purchase Modal -->
+    <div id="vipModal" class="modal">
+        <div class="modal-content bg-white rounded-2xl max-w-md w-full mx-4">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-2xl font-bold text-dark">Upgrade to VIP</h3>
+                    <button id="closeVipModal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="bg-gradient-to-r from-primary to-secondary rounded-2xl p-6 text-white text-center">
+                    <h4 class="text-xl font-bold">VIP Membership</h4>
+                    <p class="mt-2">Unlimited designs, premium features, and priority support</p>
+                    <div class="mt-4 flex justify-center">
+                        <div class="bg-white text-primary rounded-lg px-4 py-2">
+                            <span class="text-2xl font-bold">$70</span>
+                            <span class="text-gray-600">/month</span>
+                        </div>
+                        <div class="ml-2 bg-white text-primary rounded-lg px-4 py-2">
+                            <span class="text-2xl font-bold">$800</span>
+                            <span class="text-gray-600">/year</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6">
+                    <h4 class="text-lg font-bold text-dark">Payment Method</h4>
+                    <div class="grid grid-cols-3 gap-4 mt-4">
+                        <button class="payment-method border border-gray-300 rounded-lg p-3 flex flex-col items-center hover:border-primary">
+                            <i class="fab fa-cc-visa text-3xl text-blue-600"></i>
+                            <span class="mt-1 text-sm">Card</span>
+                        </button>
+                        <button class="payment-method border border-gray-300 rounded-lg p-3 flex flex-col items-center hover:border-primary">
+                            <i class="fab fa-paypal text-3xl text-blue-800"></i>
+                            <span class="mt-1 text-sm">PayPal</span>
+                        </button>
+                        <button class="payment-method border border-gray-300 rounded-lg p-3 flex flex-col items-center hover:border-primary">
+                            <i class="fab fa-bitcoin text-3xl text-orange-500"></i>
+                            <span class="mt-1 text-sm">Crypto</span>
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <button class="w-full btn-primary text-white px-4 py-3 rounded-lg font-medium">
+                            Proceed to Payment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const loginBtn = document.getElementById('loginBtn');
+        const signupBtn = document.getElementById('signupBtn');
+        const mobileLoginBtn = document.getElementById('mobileLoginBtn');
+        const mobileSignupBtn = document.getElementById('mobileSignupBtn');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const loginModal = document.getElementById('loginModal');
+        const signupModal = document.getElementById('signupModal');
+        const dashboardModal = document.getElementById('dashboardModal');
+        const vipModal = document.getElementById('vipModal');
+        const closeLoginModal = document.getElementById('closeLoginModal');
+        const closeSignupModal = document.getElementById('closeSignupModal');
+        const closeDashboard = document.getElementById('closeDashboard');
+        const closeVipModal = document.getElementById('closeVipModal');
+        const switchToSignup = document.getElementById('switchToSignup');
+        const switchToLogin = document.getElementById('switchToLogin');
+        const loginForm = document.getElementById('loginForm');
+        const signupForm = document.getElementById('signupForm');
+        const upgradeBtn = document.getElementById('upgradeBtn');
+        const userNameDisplay = document.getElementById('userNameDisplay');
+        const userEmailDisplay = document.getElementById('userEmailDisplay');
+        const userPlanDisplay = document.getElementById('userPlanDisplay');
+
+        // Event Listeners
+        loginBtn.addEventListener('click', () => openModal(loginModal));
+        signupBtn.addEventListener('click', () => openModal(signupModal));
+        mobileLoginBtn.addEventListener('click', () => openModal(loginModal));
+        mobileSignupBtn.addEventListener('click', () => openModal(signupModal));
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        closeLoginModal.addEventListener('click', () => closeModal(loginModal));
+        closeSignupModal.addEventListener('click', () => closeModal(signupModal));
+        closeDashboard.addEventListener('click', () => closeModal(dashboardModal));
+        closeVipModal.addEventListener('click', () => closeModal(vipModal));
+        switchToSignup.addEventListener('click', () => {
+            closeModal(loginModal);
+            openModal(signupModal);
+        });
+        switchToLogin.addEventListener('click', () => {
+            closeModal(signupModal);
+            openModal(loginModal);
+        });
+        loginForm.addEventListener('submit', handleLogin);
+        signupForm.addEventListener('submit', handleSignup);
+        upgradeBtn.addEventListener('click', () => {
+            closeModal(dashboardModal);
+            openModal(vipModal);
+        });
+
+        // Modal Functions
+        function openModal(modal) {
+            modal.style.display = 'flex';
+        }
+
+        function closeModal(modal) {
+            modal.style.display = 'none';
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Login Handler
+        function handleLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // Special admin account
+            if (email === 'marcalvin73@gmail.com' && password === 'Elly521OP') {
+                userNameDisplay.textContent = 'Admin User';
+                userEmailDisplay.textContent = email;
+                userPlanDisplay.textContent = 'VIP Plan';
+                document.getElementById('upgradeBtn').textContent = 'Manage VIP';
+                closeModal(loginModal);
+                openModal(dashboardModal);
+                return;
+            }
+            
+            // Simulate login process
+            userNameDisplay.textContent = 'John Doe';
+            userEmailDisplay.textContent = email;
+            userPlanDisplay.textContent = 'Free Plan';
+            document.getElementById('upgradeBtn').textContent = 'Upgrade to VIP';
+            closeModal(loginModal);
+            openModal(dashboardModal);
+        }
+
+        // Signup Handler
+        function handleSignup(e) {
+            e.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            
+            // Simulate signup process
+            userNameDisplay.textContent = name;
+            userEmailDisplay.textContent = email;
+            userPlanDisplay.textContent = 'Free Plan';
+            document.getElementById('upgradeBtn').textContent = 'Upgrade to VIP';
+            closeModal(signupModal);
+            openModal(dashboardModal);
+        }
+
+        // Close modals when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) closeModal(loginModal);
+            if (e.target === signupModal) closeModal(signupModal);
+            if (e.target === dashboardModal) closeModal(dashboardModal);
+            if (e.target === vipModal) closeModal(vipModal);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
