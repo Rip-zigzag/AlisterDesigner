@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alister - Professional Graphic Design Platform</title> 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,10 +49,13 @@
             background: linear-gradient(90deg, #ec4899 0%, #f43f5e 100%);
             transition: all 0.3s ease;
         }
-        .btn-secondary:hover {
-            background: linear-gradient(90deg, #db2777 0%, #e11d48 100%);
-            transform: translateY(-2px);
+       .btn-secondary:hover {
+          background: linear-gradient(90deg, #db2777 0%, #e11d48 100%);
+          transform: translateY(-2px); /* Add this line */
         }
+        
+       
+        
         .feature-card {
             transition: all 0.3s ease;
         }
@@ -101,6 +104,7 @@
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
+    
     .modal {
     display: none;
     position: fixed;
@@ -162,7 +166,7 @@
                      
                     
                 </div>
-                 <div class="flex items-center ml-auto lg:ml-[400px]">
+               <div class="flex items-center ml-auto lg:ml-[400px]">
     <div class="hidden md:block">
         <button id="loginBtn" class="btn-primary text-white px-5 py-2 rounded-lg font-medium mr-3">
             Sign In
@@ -179,14 +183,14 @@
 </div>
             </div>
         </div>
-        
-        <!-- Mobile menu -->
+
+         <!-- Mobile menu -->
         <div id="mobileMenu" class="md:hidden hidden bg-white">
             <div class="pt-2 pb-3 space-y-1 px-4">
-              <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-dark">Home</a>
-              <a href="features.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-dark">Features</a>
-              <a href="pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-dark">Pricing</a>
-              <a href="support.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-dark">Support</a>
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-dark">Home</a>
+                <a href="features.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-dark">Features</a>
+                <a href="pricing.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-dark">Pricing</a>
+                <a href="support.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-dark">Support</a>
                 <div class="pt-4 pb-3 border-t border-gray-200">
                     <button id="mobileLoginBtn" class="w-full btn-primary text-white px-4 py-2 rounded-lg font-medium mb-2">
                         Sign In
@@ -198,68 +202,190 @@
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <div class="relative overflow-hidden">
-        <div class="max-w-7xl mx-auto">
-            <div class="relative z-10 pb-8 bg-transparent sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                    <div class="sm:text-center lg:text-left">
-                        <h1 class="text-4xl tracking-tight font-extrabold text-dark sm:text-5xl md:text-6xl hero-text">
-                            <span class="block">Design Like a Pro with</span>
-                            <span class="block text-primary">Alister Designer</span>
-                        </h1>
-                        <p class="mt-3 text-base text-gray-600 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                            Create stunning graphics, presentations, and marketing materials in minutes. No design experience needed. Join millions of creators worldwide.
-                        </p>
-                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                            <div class="rounded-md shadow">
-                             <a href="pricing.html" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                                Get Started
-                             </a>
-                            </div>
-                            <div class="mt-3 sm:mt-0 sm:ml-3">
-                              <a href="features.html" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
-                                View Features
-                              </a>
-                            </div>
-                        </div>
-                    </div>
-                </main>
+      <!-- Features section -->
+      <section id="features" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-primary font-semibold tracking-wide uppercase">Features</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-dark sm:text-4xl">
+                    Everything you need to create stunning designs
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Powerful tools for creators of all levels
+                </p>
             </div>
-        </div>
-        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 design-preview">
-            <div class="h-56 w-full bg-gray-200 sm:h-72 md:h-96 lg:w-full lg:h-full flex items-center justify-center">
-                <div class="bg-white rounded-2xl shadow-xl p-6 max-w-md w-full mx-4">
-                    <div class="flex justify-between items-center mb-4">
-                        <div class="text-lg font-bold text-dark">Social Media Post</div>
-                        <div class="flex space-x-2">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+
+            <div class="mt-16">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- Feature 1 -->
+                    <div class="feature-card bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 border border-gray-100">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                            <i class="fas fa-magic text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-dark">AI-Powered Design</h3>
+                            <p class="mt-2 text-base text-gray-600">
+                                Our AI assistant helps you create professional designs in seconds with smart suggestions.
+                            </p>
                         </div>
                     </div>
-                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl h-48 flex items-center justify-center">
-                        <div class="text-center p-4">
-                            <div class="text-white text-2xl font-bold mb-2">Summer Sale</div>
-                            <div class="text-white text-4xl font-bold mb-2">50% OFF</div>
-                            <div class="text-white text-sm">On all products</div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 border border-gray-100">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white">
+                            <i class="fas fa-th-large text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-dark">Thousands of Templates</h3>
+                            <p class="mt-2 text-base text-gray-600">
+                                Choose from over 10,000+ professionally designed templates for any occasion.
+                            </p>
                         </div>
                     </div>
-                    <div class="flex justify-between mt-4">
-                        <div class="text-xs text-gray-500">Created with Alister</div>
-                        <div class="flex space-x-2">
-                            <i class="fas fa-heart text-red-500"></i>
-                            <i class="fas fa-share text-gray-500"></i>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 border border-gray-100">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-accent text-white">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-dark">Team Collaboration</h3>
+                            <p class="mt-2 text-base text-gray-600">
+                                Work together in real-time with your team members and share feedback seamlessly.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 border border-gray-100">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
+                            <i class="fas fa-mobile-alt text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-dark">Mobile App</h3>
+                            <p class="mt-2 text-base text-gray-600">
+                                Design on the go with our powerful mobile app for iOS and Android.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="feature-card bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 border border-gray-100">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-secondary text-white">
+                            <i class="fas fa-cloud-upload-alt text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-dark">Cloud Storage</h3>
+                            <p class="mt-2 text-base text-gray-600">
+                                Access your designs from anywhere with 100GB of secure cloud storage.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="feature-card bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 border border-gray-100">
+                        <div class="flex items-center justify-center h-12 w-12 rounded-md bg-accent text-white">
+                            <i class="fas fa-print text-xl"></i>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-lg font-medium text-dark">Print Services</h3>
+                            <p class="mt-2 text-base text-gray-600">
+                                Print and ship directly from our platform with premium quality materials.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white">
+    <!-- Testimonials -->
+    <div class="py-16 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-extrabold text-white">Trusted by Creators Worldwide</h2>
+                <p class="mt-4 max-w-2xl text-xl text-indigo-100 mx-auto">
+                    Join over 2 million designers who use Alister to bring their ideas to life
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card bg-white rounded-2xl shadow-lg p-6">
+                        <div class="flex items-center">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Sarah Johnson">
+                            <div class="ml-4">
+                                <div class="text-lg font-bold text-dark">Sarah Johnson</div>
+                                <div class="text-indigo-600">Marketing Director</div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600">
+                                "Alister has transformed how we create marketing materials. The AI tools are incredible and save us hours every week."
+                            </p>
+                        </div>
+                        <div class="mt-4 flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card bg-white rounded-2xl shadow-lg p-6">
+                        <div class="flex items-center">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Michael Chen">
+                            <div class="ml-4">
+                                <div class="text-lg font-bold text-dark">Michael Chen</div>
+                                <div class="text-indigo-600">Freelance Designer</div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600">
+                                "As a freelancer, Alister helps me deliver professional designs to clients quickly. The VIP membership pays for itself!"
+                            </p>
+                        </div>
+                        <div class="mt-4 flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card bg-white rounded-2xl shadow-lg p-6">
+                        <div class="flex items-center">
+                            <img class="h-12 w-12 rounded-full" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="David Wilson">
+                            <div class="ml-4">
+                                <div class="text-lg font-bold text-dark">David Wilson</div>
+                                <div class="text-indigo-600">Small Business Owner</div>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600">
+                                "I've never used design software before, but Alister made it so easy to create professional marketing materials for my business."
+                            </p>
+                        </div>
+                        <div class="mt-4 flex">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star-half-alt text-yellow-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+  <footer class="bg-dark text-white">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
@@ -288,10 +414,10 @@
                 <div>
                     <h3 class="text-lg font-semibold">Product</h3>
                     <ul class="mt-4 space-y-2">
-                        <li><a href="features.html" class="footer-link text-gray-400 hover:text-white">Features</a></li>
-                        <li><a href="Templates.html" class="footer-link text-gray-400 hover:text-white">Templates</a></li>
-                        <li><a href="pricing.html" class="footer-link text-gray-400 hover:text-white">Pricing</a></li>
-                        <li><a href="#" class="footer-link text-gray-400 hover:text-white">Download</a></li>
+                          <li><a href="features.html" class="footer-link text-gray-400 hover:text-white">Features</a></li>
+                          <li><a href="Templates.html" class="footer-link text-gray-400 hover:text-white">Templates</a></li>
+                          <li><a href="pricing.html" class="footer-link text-gray-400 hover:text-white">Pricing</a></li>
+                          <li><a href="#" class="footer-link text-gray-400 hover:text-white">Download</a></li>
                     </ul>
                 </div>
                 <div>
@@ -309,9 +435,9 @@
                         <li><a href="Privacy policy.html" class="footer-link text-gray-400 hover:text-white">Privacy Policy</a></li>
                         <li><a href="Terms of Service.html" class="footer-link text-gray-400 hover:text-white">Terms of Service</a></li>
                         <li><a href="Cookie Policy.html" class="footer-link text-gray-400 hover:text-white">Cookie Policy</a></li>
-                        <li><a href="License.html" class="footer-link text-gray-400 hover:text-white">Licence</a></li>
+                        <li><a href="License.html" class="footer-link text-gray-400 hover:text-white">License</a></li>
                     </ul>
-                </div> 
+                </div>
             </div>
             <div class="mt-12 pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400">© 2023 Alister. All rights reserved.</p>
@@ -322,7 +448,7 @@
         </div>
     </footer>
 
-    <!-- Login Modal -->
+      <!-- Login Modal -->
     <div id="loginModal" class="modal">
         <div class="modal-content bg-white rounded-2xl max-w-md w-full mx-4">
             <div class="p-6">
@@ -391,7 +517,7 @@
                     <div class="flex items-center">
                         <input id="termsAgree" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" required>
                         <label for="termsAgree" class="ml-2 block text-sm text-gray-700">
-                            I agree to the <a href="Terms of Service.html" class="text-primary">Terms of Service</a> and <a href="Privacy policy.html"text-primary">Privacy Policy</a>
+                            I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a>
                         </label>
                     </div>
                     <div>
@@ -399,29 +525,6 @@
                             Create Account
                         </button>
                     </div>
-                    <div class="mt-6">
-    <p class="text-center text-gray-500 mb-4">Or sign up with</p>
-    <div class="grid grid-cols-3 gap-3">
-        <button class="flex items-center justify-center border border-gray-300 rounded-lg px-2 py-2 hover:bg-gray-100 transition">
-            <i class="fab fa-x-twitter text-xl text-gray-700"></i>
-        </button>
-        <button class="flex items-center justify-center border border-gray-300 rounded-lg px-2 py-2 hover:bg-gray-100 transition">
-            <i class="fab fa-google text-xl text-red-500"></i>
-        </button>
-        <button class="flex items-center justify-center border border-gray-300 rounded-lg px-2 py-2 hover:bg-gray-100 transition">
-            <i class="fab fa-apple text-xl text-gray-900"></i>
-        </button>
-        <button class="flex items-center justify-center border border-gray-300 rounded-lg px-2 py-2 hover:bg-gray-100 transition">
-            <i class="fab fa-facebook-f text-xl text-blue-600"></i>
-        </button>
-        <button class="flex items-center justify-center border border-gray-300 rounded-lg px-2 py-2 hover:bg-gray-100 transition">
-            <i class="fab fa-microsoft text-xl text-blue-800"></i>
-        </button>
-        <button class="flex items-center justify-center border border-gray-300 rounded-lg px-2 py-2 hover:bg-gray-100 transition">
-            <i class="fab fa-github text-xl text-gray-800"></i>
-        </button>
-    </div>
-</div>
                 </form>
                 <div class="mt-4 text-center">
                     <p class="text-gray-600">
@@ -470,27 +573,24 @@
                             <h4 class="text-lg font-bold text-dark mb-4">Recent Projects</h4>
                             <ul class="space-y-3">
                                 <li class="flex items-center">
-                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" >
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
                                     <div class="ml-3">
                                         <p class="font-medium text-dark">Summer Sale Poster</p>
                                         <p class="text-sm text-gray-500">Edited 2 hours ago</p>
                                     </div>
-                                </div>
                                 </li>
                                 <li class="flex items-center">
-                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" >
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
                                     <div class="ml-3">
                                         <p class="font-medium text-dark">LinkedIn Banner</p>
                                         <p class="text-sm text-gray-500">Edited yesterday</p>
                                     </div>
-                                    </div>
                                 </li>
                                 <li class="flex items-center">
-                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" >
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
                                     <div class="ml-3">
                                         <p class="font-medium text-dark">Instagram Story</p>
                                         <p class="text-sm text-gray-500">Edited 3 days ago</p>
-                                    </div>
                                     </div>
                                 </li>
                             </ul>
@@ -531,19 +631,19 @@
                             <h4 class="text-lg font-bold text-dark mb-4">Start a New Design</h4>
                             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                                 <button class="dashboard-card bg-gray-50 rounded-xl p-4 flex flex-col items-center hover:bg-gray-100">
-                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" >   
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
                                     <span class="mt-2 text-dark">Social Media</span>
                                 </button>
                                 <button class="dashboard-card bg-gray-50 rounded-xl p-4 flex flex-col items-center hover:bg-gray-100">
-                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" >
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
                                     <span class="mt-2 text-dark">Marketing</span>
                                 </button>
                                 <button class="dashboard-card bg-gray-50 rounded-xl p-4 flex flex-col items-center hover:bg-gray-100">
-                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" >
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
                                     <span class="mt-2 text-dark">Presentations</span>
                                 </button>
                                 <button class="dashboard-card bg-gray-50 rounded-xl p-4 flex flex-col items-center hover:bg-gray-100">
-                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" >
+                                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
                                     <span class="mt-2 text-dark">Print</span>
                                 </button>
                             </div>
